@@ -1,0 +1,6 @@
+Wat hebben we nodig voor een beveiligde website:
+HTTPS Verbinding
+Talen: HTML, CSS, PHP, Javascript
+Wachtwoorden van accounts moeten gehashed worden
+Rechten goed managen, dus kijk goed welk account wat mag doen
+Invulvelden beschermen tegen sql injections
