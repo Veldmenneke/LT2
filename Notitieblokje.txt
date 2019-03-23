@@ -1,5 +1,6 @@
-Wat hebben we nodig voor een beveiligde website:
+Wat hebben we nodig voor en beveiligde website:
 HTTPS Verbinding
+SSL certificaat op de website
 Talen: HTML, CSS, PHP, Javascript
 Wachtwoorden van accounts moeten gehashed worden
 Rechten goed managen, dus kijk goed welk account wat mag doen
