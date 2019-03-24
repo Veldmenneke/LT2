@@ -5,7 +5,7 @@
         <link href="style.css" rel="stylesheet">
         <title>Aanmelden</title>
     </head>
-    <body>
+    <body background= "images/Background.jpg">
         <form method="post" action="proces.php">
         E-mail: <input type="text" name="email"><br />
         <p>
