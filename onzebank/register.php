@@ -46,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	// Validate email
 	if(empty(trim($_POST["email"]))){
 		$email_err = "Please enter email.";
-	} elseif(filter_var($email, FILTER_VALIDATE_EMAIL)){
+	} elseif(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
 		$email_err = "niet geldig email adres ingevuld";
 	} else {
 		$email = trim($_POST["email"]);
