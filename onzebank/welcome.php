@@ -21,7 +21,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 <body>
     <div class="page-header">
-        <h1><B>Onze Bank internetbankieren      </B> <a href="logout.php" class="btn btn-danger">Uitloggen</a></h1>
+        <h1><B>Hallo, <b><?php echo htmlspecialchars($_SESSION["username"]); ?>
+		</b> welkom bij onze bank internetbankieren.</h1>
+		<a href="logout.php" class="btn btn-danger">Uitloggen</a>
+		<a href="register.php" class="btn btn-danger">Nieuwe gebruiker registeren</a></h1>
     </div>
 </body>
 </html>

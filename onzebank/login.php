@@ -61,7 +61,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;                            
+                            $_SESSION["username"] = $username;   
+							
                             
                             // Redirect user to welcome page
                             header("location: welcome.php");
@@ -117,7 +118,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+            <p>Heeft u geen account? neem dan contact met ons op via info@onzebank.nl</a>.</p>
         </form>
     </div>    
 </body>
