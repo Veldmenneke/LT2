@@ -1,3 +1,6 @@
+<meta http-equiv="refresh" content="300;url=logout.php" />
+
+
 <?php
 // Initialize the session
 session_start();
@@ -24,7 +27,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <h1><B>Hallo, <b><?php echo htmlspecialchars($_SESSION["username"]); ?>
 		</b> welkom bij onze bank internetbankieren.</h1>
 		<a href="logout.php" class="btn btn-danger">Uitloggen</a>
-		<a href="register.php" class="btn btn-danger">Nieuwe gebruiker registeren</a></h1>
+		<?php if($_SESSION['username'] == 'admin') {
+		echo "<a href='register.php' class='btn btn-danger'>Nieuwe gebruiker registeren</a></h1>";}?>
     </div>
+	<img src="bankieren.jpg" align="center">
 </body>
 </html>

@@ -1,11 +1,17 @@
+<meta http-equiv="refresh" content="90;url=logout.php" />
+
 <?php
 // Include config file
 require_once "config.php";
 session_start();
+
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
-}	
+}
+if($_SESSION["username"] !='admin') {
+	header('location: welcome.php');
+}
 // Define variables and initialize with empty values
 $username = $email = $password = $confirm_password = "";
 $rechten = 1;
@@ -57,10 +63,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	}
 	
     // Validate password
+	$passwordcheck = $_POST["password"];
     if(empty(trim($_POST["password"]))){
         $password_err = "Please enter a password.";     
-    } elseif(strlen(trim($_POST["password"])) < 6){
-        $password_err = "Password must have atleast 6 characters.";
+    } elseif(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,20}$/', $_POST["password"])){
+        $password_err = "wachtwoord moet minstens een hoofdletter, kleine letter en cijfer bevatten en 8 tot 20 tekens bevatten";
     } else{
         $password = trim($_POST["password"]);
     }
@@ -122,7 +129,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <div class="wrapper">
-        <h2>Sign Up</h2>
+        <h2>Account aanvragen</h2>
         <p>formulier invullen om account aan te maken.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
@@ -151,6 +158,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <p>Heeft u al een account? <a href="login.php">Hier inloggen</a>.</p>
         </form>
-    </div>    
+    </div> 
+
 </body>
 </html>

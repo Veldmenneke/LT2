@@ -11,9 +11,13 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 // Include config file
 require_once "config.php";
  
+
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
+
+
+
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -62,7 +66,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;   
-							
                             
                             // Redirect user to welcome page
                             header("location: welcome.php");
